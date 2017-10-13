@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane styleClass="root" stylesheets="@UIConfig.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aptovisionmanager.AptoVisionManagerController">
+   <children>
+		<VBox prefHeight="750.0" prefWidth="1000.0">
+			<padding>
+				<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+			</padding>
+			<children>
+				<HBox prefHeight="63.0" prefWidth="896.0" spacing="135.0">
+					<VBox.margin>
+						<Insets bottom="3.0" />
+					</VBox.margin>
+					<padding>
+						<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+					</padding>
+					<children>
+						<VBox prefHeight="75.0" prefWidth="650.0" spacing="1.0">
+							<HBox.margin>
+								<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+							</HBox.margin>
+							<padding>
+								<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+							</padding>
+							<children>
+								<HBox alignment="BASELINE_LEFT" prefHeight="24.0" prefWidth="644.0" spacing="10.0">
+									<VBox.margin>
+										<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+									</VBox.margin>
+									<padding>
+										<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+									</padding>
+									<children>
+										<Label prefHeight="26.0" prefWidth="201.0" text="IP Address of BlueRiver Control">
+											<HBox.margin>
+												<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+											</HBox.margin>
+											<padding>
+												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+											</padding>
+										</Label>
+                              <TextField text="127.0.0.1">
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField text="6970">
+                                 <HBox.margin>
+                                    <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                 </HBox.margin>
+                              </TextField>
+										<Button id="connectButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="81.0" text="Connect">
+											<HBox.margin>
+												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+											</HBox.margin>
+										</Button>
+									</children>
+								</HBox>
+								<HBox prefHeight="27.0" prefWidth="644.0" spacing="1.0">
+									<VBox.margin>
+										<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+									</VBox.margin>
+									<padding>
+										<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+									</padding>
+									<children>
+										<CheckBox id="separateHDMIAudioRoutingCheckBox" mnemonicParsing="false" prefHeight="23.0" prefWidth="407.0" text="Separate HDMI Audio Routing (HDMI Audio Routing Tab)">
+											<HBox.margin>
+												<Insets bottom="1.0" left="2.0" right="1.0" top="1.0" />
+											</HBox.margin>
+										</CheckBox>
+									</children>
+								</HBox>
+							</children>
+						</VBox>
+						<ImageView id="logoImage" fitHeight="75.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+							<HBox.margin>
+								<Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
+							</HBox.margin>
+						</ImageView>
+					</children>
+				</HBox>
+				<TabPane id="tabPane" prefHeight="669.0" prefWidth="996.0" tabClosingPolicy="UNAVAILABLE">
+					<tabs>
+						<Tab text="Video Routing">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="427.0" prefWidth="896.0">
+									<children>
+										<VBox layoutX="290.0" layoutY="86.0" prefHeight="480.0" prefWidth="894.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<padding>
+												<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+											</padding>
+											<children>
+												<Label prefHeight="26.0" prefWidth="125.0" text="Decoders">
+													<VBox.margin>
+														<Insets left="15.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="videoRoutingDecoders" hgap="2.0" prefHeight="263.0" prefRows="2" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<padding>
+														<Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+													</padding>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+												</TilePane>
+												<Label prefHeight="26.0" prefWidth="132.0" text="Encoders">
+													<VBox.margin>
+														<Insets left="15.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="videoRoutingEncoders" hgap="2.0" prefHeight="278.0" prefRows="2" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<padding>
+														<Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+													</padding>
+												</TilePane>
+											</children>
+										</VBox>
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Wall Routing">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+									<children>
+										<VBox layoutX="347.0" layoutY="81.0" prefHeight="480.0" prefWidth="894.0" spacing="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<padding>
+												<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+											</padding>
+											<children>
+												<HBox prefHeight="293.0" prefWidth="892.0" spacing="10.0">
+													<children>
+														<VBox prefHeight="289.0" prefWidth="224.0" style="-fx-border-color: grey;">
+															<children>
+																<Label alignment="CENTER" prefHeight="21.0" prefWidth="165.0" text="Wall Parameters">
+																	<font>
+																		<Font name="Arial Bold" size="18.0" />
+																	</font>
+																</Label>
+																<GridPane hgap="1.0" prefHeight="144.0" prefWidth="245.0" vgap="1.0">
+																	<columnConstraints>
+																		<ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="146.0" />
+																		<ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="31.0" />
+																		<ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="30.0" />
+																	</columnConstraints>
+																	<rowConstraints>
+																		<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+																		<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+																		<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+																		<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+																		<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+																	</rowConstraints>
+																	<padding>
+																		<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+																	</padding>
+																	<children>
+																		<Label text="Wall Size" />
+																		<Label text="Bezel Top" GridPane.rowIndex="1" />
+																		<Label text="Bezel Right" GridPane.rowIndex="2" />
+																		<Label text="Bezel Bottom" GridPane.rowIndex="3" />
+																		<Label text="Bezel Left" GridPane.rowIndex="4" />
+																		<TextField prefHeight="23.0" prefWidth="34.0" text="2" GridPane.columnIndex="1" />
+																		<TextField text="2" GridPane.columnIndex="2" />
+																		<TextField text="16" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+																		<TextField text="16" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+																		<TextField text="16" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+																		<TextField text="16" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+																	</children>
+																</GridPane>
+																<ImageView id="wallRoutingWallParametersImage" fitHeight="118.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+																	<VBox.margin>
+																		<Insets left="30.0" />
+																	</VBox.margin>
+																</ImageView>
+															</children>
+															<HBox.margin>
+																<Insets bottom="1.0" left="3.0" right="3.0" top="1.0" />
+															</HBox.margin>
+                                             <padding>
+                                                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                             </padding>
+														</VBox>
+														<VBox prefHeight="265.0" prefWidth="277.0">
+															<children>
+																<Label prefHeight="21.0" prefWidth="149.0" text="Wall Decoders">
+																	<VBox.margin>
+																		<Insets left="15.0" />
+																	</VBox.margin>
+																	<font>
+																		<Font name="Arial Bold" size="18.0" />
+																	</font>																
+																</Label>
+																<TilePane id="wallRoutingWall" hgap="2.0" prefHeight="277.0" prefRows="2" prefWidth="275.0" style="-fx-border-color: grey;" vgap="2.0">
+																	<VBox.margin>
+																		<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+																	</VBox.margin>
+																	<padding>
+																		<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+																	</padding>
+																</TilePane>
+															</children>
+														</VBox>
+													</children>
+												</HBox>
+												<Label prefHeight="37.0" prefWidth="107.0" text="Decoders">
+													<VBox.margin>
+														<Insets left="15.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+																
+      												</Label>
+												<TilePane id="wallRoutingDecoders" hgap="2.0" prefHeight="108.0" prefRows="1" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+												</TilePane>
+												<Label prefHeight="39.0" prefWidth="98.0" text="Encoders">
+													<VBox.margin>
+														<Insets left="15.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="wallRoutingEncoders" hgap="2.0" prefHeight="104.0" prefRows="1" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<padding>
+														<Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+													</padding>
+												</TilePane>
+											</children>
+										</VBox>
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Multiview Routing">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+									<children>
+										<VBox layoutX="385.0" layoutY="130.0" prefHeight="480.0" prefWidth="894.0" spacing="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<padding>
+												<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+											</padding>
+											<children>
+												<HBox prefHeight="31.0" prefWidth="892.0" spacing="10.0">
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+													<children>
+														<Button mnemonicParsing="false" text="Refresh" />
+														<Label prefHeight="23.0" prefWidth="75.0" text="Multiview">
+															<HBox.margin>
+																<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+															</HBox.margin>
+														</Label>
+														<ComboBox prefHeight="23.0" prefWidth="374.0">
+															<HBox.margin>
+																<Insets top="1.0" />
+															</HBox.margin>
+														</ComboBox>
+														<Button mnemonicParsing="false" text="Save">
+															<HBox.margin>
+																<Insets top="1.0" />
+															</HBox.margin>
+														</Button>
+														<Button mnemonicParsing="false" text="Load">
+															<HBox.margin>
+																<Insets top="1.0" />
+															</HBox.margin>
+														</Button>
+													</children>
+													<VBox.margin>
+														<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+													</VBox.margin>
+												</HBox>
+												<HBox prefHeight="228.0" prefWidth="892.0" spacing="1.0">
+													<padding>
+														<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+													</padding>
+													<children>
+														<VBox prefHeight="226.0" prefWidth="215.0" spacing="3.0" style="-fx-border-color: grey;">
+															<HBox.margin>
+																<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+															</HBox.margin>
+															<padding>
+																<Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+															</padding>
+															<children>
+																<Label text="Multiview Devices">
+																	<VBox.margin>
+																		<Insets bottom="2.0" left="15.0" right="2.0" top="2.0" />
+																	</VBox.margin>
+																	<font>
+																		<Font name="Arial Bold" size="18.0" />
+																	</font>
+																</Label>
+																<ImageView id="multiviewRoutingMultiviewDeviceImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+															</children>
+														</VBox>
+														<VBox prefHeight="223.0" prefWidth="770.0" spacing="2.0">
+															<HBox.margin>
+																<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+															</HBox.margin>
+															<padding>
+																<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+															</padding>
+															<children>
+																<Label text="Multiview Surfaces">
+																	<VBox.margin>
+																		<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+																	</VBox.margin>
+																	<font>
+																		<Font name="Arial Bold" size="18.0" />
+																	</font>
+																</Label>
+																<TilePane id="multiviewRoutingWall" hgap="2.0" prefHeight="208.0" prefRows="2" prefWidth="763.0" style="-fx-border-color: grey;" vgap="2.0">
+																	<VBox.margin>
+																		<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+																	</VBox.margin>
+																	<padding>
+																		<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+																	</padding>
+																</TilePane>
+															</children>
+														</VBox>
+													</children>
+												</HBox>
+												<Label text="Decoders">
+													<VBox.margin>
+														<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="multiviewRoutingDecoders" hgap="2.0" prefHeight="127.0" prefRows="1" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+												</TilePane>
+												<Label text="Encoders">
+													<VBox.margin>
+														<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="multiviewRoutingEncoders" hgap="2.0" prefHeight="137.0" prefRows="1" prefWidth="990.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+												</TilePane>
+											</children>
+										</VBox>
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab id="HDMIAudioRoutingTab" text="HDMI Audio Routing">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+									<children>
+										<VBox layoutX="347.0" layoutY="146.0" prefHeight="580.0" prefWidth="894.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<padding>
+												<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+											</padding>
+											<children>
+												<Label text="Decoders">
+													<VBox.margin>
+														<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="HDMIAudioRoutingDecoders" hgap="2.0" prefHeight="263.0" prefRows="2" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+													</padding>
+												</TilePane>
+												<Label text="Encoders">
+													<VBox.margin>
+														<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="HDMIAudioRoutingEncoders" hgap="2.0" prefHeight="275.0" prefRows="2" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+													</padding>
+												</TilePane>
+											</children>
+										</VBox>
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Analog Audio Routing">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+									<children>
+										<VBox layoutX="397.0" layoutY="177.0" prefHeight="580.0" prefWidth="894.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<padding>
+												<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+											</padding>
+											<children>
+												<Label text="Decoders">
+													<VBox.margin>
+														<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="analogAudioRoutingDecoders" hgap="2.0" prefHeight="270.0" prefRows="2" prefWidth="992.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+												</TilePane>
+												<Label text="Encoders">
+													<VBox.margin>
+														<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="analogAudioRoutingEncoders" hgap="2.0" prefHeight="260.0" prefRows="2" prefWidth="990.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+												</TilePane>
+											</children>
+										</VBox>
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="RS-232 Routing">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+									<children>
+										<VBox layoutX="313.0" layoutY="60.0" prefHeight="580.0" prefWidth="894.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<padding>
+												<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+											</padding>
+											<children>
+												<Label text="Receivers">
+													<VBox.margin>
+														<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="RS232RoutingReceivers" hgap="2.0" prefHeight="263.0" prefRows="2" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+												</TilePane>
+												<Label text="Senders">
+													<VBox.margin>
+														<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="RS232RoutingSenders" hgap="2.0" prefHeight="272.0" prefRows="2" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+												</TilePane>
+											</children>
+										</VBox>
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Infrared Routing">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+									<children>
+										<VBox prefHeight="636.0" prefWidth="989.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<padding>
+												<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+											</padding>
+											<children>
+												<Label text="Receivers">
+													<VBox.margin>
+														<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="infraredRoutingReceivers" hgap="2.0" prefHeight="263.0" prefRows="2" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+												</TilePane>
+												<Label text="Senders">
+													<VBox.margin>
+														<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="infraredRoutingSenders" hgap="2.0" prefHeight="272.0" prefRows="2" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+												</TilePane>
+											</children>
+										</VBox>
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="USB Routing">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+									<children>
+										<VBox layoutX="28.0" prefHeight="636.0" prefWidth="996.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<padding>
+												<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+											</padding>
+											<children>
+												<Label text="Remote Extenders(REX)">
+													<VBox.margin>
+														<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="USBRoutingRemoteExtenders" hgap="2.0" prefHeight="263.0" prefRows="2" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+												</TilePane>
+												<Label text="Local Extenders(LEX)">
+													<VBox.margin>
+														<Insets bottom="1.0" left="15.0" right="1.0" top="1.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="USBRoutingLocalExtenders" hgap="2.0" prefHeight="272.0" prefRows="2" prefWidth="892.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+												</TilePane>
+											</children>
+										</VBox>
+									</children>
+                           <rotationAxis>
+                              <Point3D />
+                           </rotationAxis>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Device Manager">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+									<children>
+										<VBox prefHeight="580.0" prefWidth="894.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<padding>
+												<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+											</padding>
+											<children>
+												<HBox prefHeight="28.0" prefWidth="890.0" spacing="10.0">
+													<VBox.margin>
+														<Insets bottom="1.0" left="1.0" right="1.0" top="5.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+													</padding>
+													<children>
+														<Button mnemonicParsing="false" prefHeight="23.0" prefWidth="67.0" text="Refresh">
+															<HBox.margin>
+																<Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+															</HBox.margin>
+														</Button>
+														<Label prefHeight="21.0" prefWidth="76.0" text="Frimware">
+															<HBox.margin>
+																<Insets bottom="3.0" left="3.0" right="3.0" top="5.0" />
+															</HBox.margin>
+														</Label>
+														<ComboBox prefHeight="23.0" prefWidth="685.0">
+															<HBox.margin>
+																<Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+															</HBox.margin>
+														</ComboBox>
+													</children>
+												</HBox>
+												<Label text="All Devices">
+													<VBox.margin>
+														<Insets bottom="3.0" left="15.0" right="3.0" top="3.0" />
+													</VBox.margin>
+													<font>
+														<Font name="Arial Bold" size="18.0" />
+													</font>
+												</Label>
+												<TilePane id="deviceManagerAllDevices" hgap="2.0" prefColumns="6" prefHeight="529.0" prefRows="4" prefWidth="982.0" style="-fx-border-color: grey;" vgap="2.0">
+													<VBox.margin>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</VBox.margin>
+													<padding>
+														<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+													</padding>
+												</TilePane>
+											</children>
+										</VBox>
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+
+      					</tabs>
+					<VBox.margin>
+						<Insets bottom="1.0" left="1.0" right="1.0" top="3.0" />
+					</VBox.margin>
+				</TabPane>
+			</children>
+		</VBox>
+   </children>
+</StackPane>
